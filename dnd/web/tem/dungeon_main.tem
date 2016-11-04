@@ -1,0 +1,411 @@
+<HTML>
+  <HEAD>
+    <TITLE>Dungeon Generator</TITLE>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="../css/npc.css">
+  </HEAD>
+
+  <BODY>
+    <H2>Dungeons &amp; Dragons Online Dungeon Generator
+    <HR SIZE=1></H2>
+    <P>
+
+    <DIV CLASS="NORMAL">
+    <B>Welcome</B> to the online Dungeons &amp; Dragons Dungeon generator!
+    This tool allows you to generate random dungeons for the heroes of
+    your campaign to explore.  Try it out!
+    <P>
+    <B>Dungeon Generator News:</B>:
+    <UL>
+      <LI><B>20 Nov 2000</B>: Windows version released!  Download it <A HREF="/jgb3/dungeon_win.zip">here</A>!
+      <LI><B>20 Nov 2000</B>: Source code released!  Download it <A HREF="/jgb3/dungeon_src.zip">here</A>!
+      <LI>Wondering where all this is headed?  Check out my <A HREF="http://rover.byu.edu/jgb3/plans.html">Future Plans</A>
+          page to see my projected development schedule!
+      <LI><B>14 Nov 2000</B>:  Fixed the oft reported bug of some items being WAY over/underpriced.
+          Sorry it took so long to fix -- but it's there now.
+      <LI>Interested in making a monetary donation, so that I can continue to create and
+          improve applications like this one?  Please <A HREF="http://rover.byu.edu/jgb3/donations.html">click here</A>.
+    </UL>
+    </DIV>
+
+    <P>
+    <HR SIZE=1>
+
+    <DIV CLASS="NORMAL">
+    <FORM NAME="dungeon" ACTION="<!--%CGINAME%-->" METHOD="GET" TARGET="DUNGEON">
+      <TABLE BORDER=0>
+        <TR>
+          <TD CLASS="NORMAL">
+            Width:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="width">
+              <OPTION VALUE="2">Fine</OPTION>
+              <OPTION VALUE="4">Diminutive</OPTION>
+              <OPTION VALUE="8">Tiny</OPTION>
+              <OPTION VALUE="12">Small</OPTION>
+              <OPTION VALUE="16" SELECTED>Medium</OPTION>
+              <OPTION VALUE="22">Large</OPTION>
+              <OPTION VALUE="30">Huge</OPTION>
+              <OPTION VALUE="40">Gargantuan</OPTION>
+              <OPTION VALUE="60">Colossal</OPTION>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Room Count:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="roomcnt">
+              <OPTION VALUE="none">None</OPTION>
+              <OPTION VALUE="few">Few</OPTION>
+              <OPTION VALUE="some" SELECTED>Some</OPTION>
+              <OPTION VALUE="many">Many</OPTION>
+              <OPTION VALUE="lots">Too Many!</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Height:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="height">
+              <OPTION VALUE="2">Fine</OPTION>
+              <OPTION VALUE="4">Diminutive</OPTION>
+              <OPTION VALUE="8">Tiny</OPTION>
+              <OPTION VALUE="12">Small</OPTION>
+              <OPTION VALUE="16" SELECTED>Medium</OPTION>
+              <OPTION VALUE="22">Large</OPTION>
+              <OPTION VALUE="30">Huge</OPTION>
+              <OPTION VALUE="40">Gargantuan</OPTION>
+              <OPTION VALUE="60">Colossal</OPTION>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Room Width:
+          </TD>
+          <TD CLASS="NORMAL">
+            Between
+            <SELECT NAME="minroomw">
+              <OPTION VALUE="1">1</OPTION>
+              <OPTION SELECTED VALUE="2">2</OPTION>
+              <OPTION VALUE="3">3</OPTION>
+              <OPTION VALUE="4">4</OPTION>
+              <OPTION VALUE="5">5</OPTION>
+              <OPTION VALUE="6">6</OPTION>
+              <OPTION VALUE="7">7</OPTION>
+              <OPTION VALUE="8">8</OPTION>
+              <OPTION VALUE="9">9</OPTION>
+              <OPTION VALUE="10">10</OPTION>
+              <OPTION VALUE="11">11</OPTION>
+              <OPTION VALUE="12">12</OPTION>
+              <OPTION VALUE="13">13</OPTION>
+              <OPTION VALUE="14">14</OPTION>
+              <OPTION VALUE="15">15</OPTION>
+            </SELECT>
+            and
+            <SELECT NAME="maxroomw">
+              <OPTION VALUE="1">1</OPTION>
+              <OPTION VALUE="2">2</OPTION>
+              <OPTION VALUE="3">3</OPTION>
+              <OPTION VALUE="4">4</OPTION>
+              <OPTION SELECTED VALUE="5">5</OPTION>
+              <OPTION VALUE="6">6</OPTION>
+              <OPTION VALUE="7">7</OPTION>
+              <OPTION VALUE="8">8</OPTION>
+              <OPTION VALUE="9">9</OPTION>
+              <OPTION VALUE="10">10</OPTION>
+              <OPTION VALUE="11">11</OPTION>
+              <OPTION VALUE="12">12</OPTION>
+              <OPTION VALUE="13">13</OPTION>
+              <OPTION VALUE="14">14</OPTION>
+              <OPTION VALUE="15">15</OPTION>
+            </SELECT>
+            squares
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Sparseness:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="sparse">
+              <OPTION VALUE="very">Very Sparse</OPTION>
+              <OPTION VALUE="quite">Quite Sparse</OPTION>
+              <OPTION VALUE="some" SELECTED>Somewhat Sparse</OPTION>
+              <OPTION VALUE="crowd">A Bit Crowded</OPTION>
+              <OPTION VALUE="dense">Dense</OPTION>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Room Height:
+          </TD>
+          <TD CLASS="NORMAL">
+            Between
+            <SELECT NAME="minroomh">
+              <OPTION VALUE="1">1</OPTION>
+              <OPTION SELECTED VALUE="2">2</OPTION>
+              <OPTION VALUE="3">3</OPTION>
+              <OPTION VALUE="4">4</OPTION>
+              <OPTION VALUE="5">5</OPTION>
+              <OPTION VALUE="6">6</OPTION>
+              <OPTION VALUE="7">7</OPTION>
+              <OPTION VALUE="8">8</OPTION>
+              <OPTION VALUE="9">9</OPTION>
+              <OPTION VALUE="10">10</OPTION>
+              <OPTION VALUE="11">11</OPTION>
+              <OPTION VALUE="12">12</OPTION>
+              <OPTION VALUE="13">13</OPTION>
+              <OPTION VALUE="14">14</OPTION>
+              <OPTION VALUE="15">15</OPTION>
+            </SELECT>
+            and
+            <SELECT NAME="maxroomh">
+              <OPTION VALUE="1">1</OPTION>
+              <OPTION VALUE="2">2</OPTION>
+              <OPTION VALUE="3">3</OPTION>
+              <OPTION VALUE="4">4</OPTION>
+              <OPTION SELECTED VALUE="5">5</OPTION>
+              <OPTION VALUE="6">6</OPTION>
+              <OPTION VALUE="7">7</OPTION>
+              <OPTION VALUE="8">8</OPTION>
+              <OPTION VALUE="9">9</OPTION>
+              <OPTION VALUE="10">10</OPTION>
+              <OPTION VALUE="11">11</OPTION>
+              <OPTION VALUE="12">12</OPTION>
+              <OPTION VALUE="13">13</OPTION>
+              <OPTION VALUE="14">14</OPTION>
+              <OPTION VALUE="15">15</OPTION>
+            </SELECT>
+            squares
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Randomness:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="random">
+              <OPTION VALUE="0">0%</OPTION>
+              <OPTION VALUE="5">5%</OPTION>
+              <OPTION VALUE="10">10%</OPTION>
+              <OPTION VALUE="15">15%</OPTION>
+              <OPTION VALUE="20">20%</OPTION>
+              <OPTION VALUE="25">25%</OPTION>
+              <OPTION VALUE="30">30%</OPTION>
+              <OPTION VALUE="35">35%</OPTION>
+              <OPTION VALUE="40" SELECTED>40%</OPTION>
+              <OPTION VALUE="45">45%</OPTION>
+              <OPTION VALUE="50">50%</OPTION>
+              <OPTION VALUE="55">55%</OPTION>
+              <OPTION VALUE="60">60%</OPTION>
+              <OPTION VALUE="65">65%</OPTION>
+              <OPTION VALUE="70">70%</OPTION>
+              <OPTION VALUE="75">75%</OPTION>
+              <OPTION VALUE="80">80%</OPTION>
+              <OPTION VALUE="85">85%</OPTION>
+              <OPTION VALUE="90">90%</OPTION>
+              <OPTION VALUE="95">95%</OPTION>
+              <OPTION VALUE="100">100%</OPTION>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Secret Doors:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="secret">
+              <OPTION VALUE="0">0%</OPTION>
+              <OPTION VALUE="5" SElECTED>5%</OPTION>
+              <OPTION VALUE="10">10%</OPTION>
+              <OPTION VALUE="15">15%</OPTION>
+              <OPTION VALUE="20">20%</OPTION>
+              <OPTION VALUE="25">25%</OPTION>
+              <OPTION VALUE="30">30%</OPTION>
+              <OPTION VALUE="35">35%</OPTION>
+              <OPTION VALUE="40">40%</OPTION>
+              <OPTION VALUE="45">45%</OPTION>
+              <OPTION VALUE="50">50%</OPTION>
+              <OPTION VALUE="55">55%</OPTION>
+              <OPTION VALUE="60">60%</OPTION>
+              <OPTION VALUE="65">65%</OPTION>
+              <OPTION VALUE="70">70%</OPTION>
+              <OPTION VALUE="75">75%</OPTION>
+              <OPTION VALUE="80">80%</OPTION>
+              <OPTION VALUE="85">85%</OPTION>
+              <OPTION VALUE="90">90%</OPTION>
+              <OPTION VALUE="95">95%</OPTION>
+              <OPTION VALUE="100">100%</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Deadends Removed:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="deadends">
+              <OPTION VALUE="0">0%</OPTION>
+              <OPTION VALUE="5">5%</OPTION>
+              <OPTION VALUE="10">10%</OPTION>
+              <OPTION VALUE="15">15%</OPTION>
+              <OPTION VALUE="20">20%</OPTION>
+              <OPTION VALUE="25">25%</OPTION>
+              <OPTION VALUE="30">30%</OPTION>
+              <OPTION VALUE="35">35%</OPTION>
+              <OPTION VALUE="40">40%</OPTION>
+              <OPTION VALUE="45">45%</OPTION>
+              <OPTION VALUE="50">50%</OPTION>
+              <OPTION VALUE="55">55%</OPTION>
+              <OPTION VALUE="60">60%</OPTION>
+              <OPTION VALUE="65">65%</OPTION>
+              <OPTION VALUE="70">70%</OPTION>
+              <OPTION VALUE="75" SELECTED>75%</OPTION>
+              <OPTION VALUE="80">80%</OPTION>
+              <OPTION VALUE="85">85%</OPTION>
+              <OPTION VALUE="90">90%</OPTION>
+              <OPTION VALUE="95">95%</OPTION>
+              <OPTION VALUE="100">100%</OPTION>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Concealed Doors:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="concealed">
+              <OPTION VALUE="0">0%</OPTION>
+              <OPTION VALUE="5">5%</OPTION>
+              <OPTION VALUE="10" SELECTED>10%</OPTION>
+              <OPTION VALUE="15">15%</OPTION>
+              <OPTION VALUE="20">20%</OPTION>
+              <OPTION VALUE="25">25%</OPTION>
+              <OPTION VALUE="30">30%</OPTION>
+              <OPTION VALUE="35">35%</OPTION>
+              <OPTION VALUE="40">40%</OPTION>
+              <OPTION VALUE="45">45%</OPTION>
+              <OPTION VALUE="50">50%</OPTION>
+              <OPTION VALUE="55">55%</OPTION>
+              <OPTION VALUE="60">60%</OPTION>
+              <OPTION VALUE="65">65%</OPTION>
+              <OPTION VALUE="70">70%</OPTION>
+              <OPTION VALUE="75">75%</OPTION>
+              <OPTION VALUE="80">80%</OPTION>
+              <OPTION VALUE="85">85%</OPTION>
+              <OPTION VALUE="90">90%</OPTION>
+              <OPTION VALUE="95">95%</OPTION>
+              <OPTION VALUE="100">100%</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Level:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="level">
+              <OPTION VALUE="1">1</OPTION>
+              <OPTION VALUE="2">2</OPTION>
+              <OPTION VALUE="3">3</OPTION>
+              <OPTION VALUE="4">4</OPTION>
+              <OPTION VALUE="5">5</OPTION>
+              <OPTION VALUE="6">6</OPTION>
+              <OPTION VALUE="7">7</OPTION>
+              <OPTION VALUE="8">8</OPTION>
+              <OPTION VALUE="9">9</OPTION>
+              <OPTION VALUE="10">10</OPTION>
+              <OPTION VALUE="11">11</OPTION>
+              <OPTION VALUE="12">12</OPTION>
+              <OPTION VALUE="13">13</OPTION>
+              <OPTION VALUE="14">14</OPTION>
+              <OPTION VALUE="15">15</OPTION>
+              <OPTION VALUE="16">16</OPTION>
+              <OPTION VALUE="17">17</OPTION>
+              <OPTION VALUE="18">18</OPTION>
+              <OPTION VALUE="19">19</OPTION>
+              <OPTION VALUE="20">20</OPTION>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Grid Resolution:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="resolution">
+              <OPTION VALUE="15">Small</OPTION>
+              <OPTION VALUE="20" SELECTED>Medium</OPTION>
+              <OPTION VALUE="25">Large</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD COLSPAN=4 CLASS="NORMAL">
+            Random Seed: <INPUT TYPE="TEXT" NAME="seed" SIZE=9>
+          </TD>
+        </TR>
+        <TR>
+          <TD COLSPAN=4 ALIGN=CENTER CLASS="NORMAL">
+            <INPUT TYPE="SUBMIT" VALUE="Generate Dungeon">
+          </TD>
+        </TR>
+      </TABLE>
+    </FORM>
+    <SPAN CLASS="NORMAL"><A HREF="http://rover.byu.edu/jgb3/generators.html">Return to the Online Generators Homepage.
+</A> or <A HREF="http://rover.byu.edu/cgi-bin/<!--%CGINAME%-->">restart the Dungeon generator</A>.</SPAN>
+    </DIV>
+
+    <HR SIZE=1>
+    <DIV CLASS="NORMAL">
+    <B>Older News:</B><BR>
+    <UL>
+      <LI><B>10 Nov 2000</B>:  Dungeon generator released!  <B>Please note:</B>  
+          <UL>
+            <LI>This generator only implements the random dungeon tables on 
+                pages 112-126 of the DMG.
+            <LI>The random map builder will often put multiple doors in a 
+                room, and sometimes into the same passage. 
+            <LI>I cannot put descriptions of monsters from the MM into this
+                program, as the contents of the Monster Manual are copyrighted.
+                <I>Please do not ask me to do so!</I>
+            <LI>Printing will probably be a problem for most people.  If you
+                are using Netscape, use the following procedure to print the
+                map and description:
+                <UL>
+                  <LI>Generate a dungeon.  Note the random seed value that is displayed
+                      immediately below the map.
+                  <LI>Close that window and enter the seed value in the form in the
+                      box labelled "Random seed."  Generate the dungeon again.
+                  <LI>You should be able to print the dungeon now.
+                </UL>
+                Note that large maps will be truncated, or "chopped".  To print
+                a large map, you will need to right click on the map, say "save image
+                as" and save the image as a <B>.png</B> file to your hard drive.  Then,
+                open the image in a graphics editor (like Photoshop, GIMP, IrfanView, etc)
+                and print it from there.
+            <LI>This program uses the treasure generator to compute treasures, and there
+                are still bugs in the treasure generator.  I am already aware that some
+                item prices are either negative numbers or are inordinately large.
+          </UL>
+          Sorry about all the caveats, but I ran out of time and couldn't smooth out
+          the wrinkles.  I will release the source code soon for those that are
+          interested.
+    </UL>
+    <P>
+    If you discover any bugs or discrepancies while using this utility,
+    please send them to <A HREF="mailto:jgb3@email.byu.edu">jgb3@email.byu.edu</A>.
+    Be sure to include the following items in your message so that I can
+    duplicate the error:
+    <UL>
+      <LI>The current "<B>random seed</B>" value
+    </UL>
+    If you do not specify even one of the above items in your e-mail, I may not
+    be able to duplicate the error you have found.
+    </DIV>
+
+    <HR SIZE=1>
+    <P>
+
+    <DIV CLASS="NORMAL">
+      <B><!--%COUNTER%--></B> hits since 10 Nov 2000!<BR>
+      <I>This site created and maintained by <A HREF="mailto:jgb3@email.byu.edu">Jamis Buck</A>
+      (jgb3@email.byu.edu)
+    </DIV>
+
+  </BODY>
+</HTML>

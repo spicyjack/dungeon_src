@@ -1,0 +1,31 @@
+<HTML>
+  <HEAD>
+    <TITLE>Dungeon Generator</TITLE>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="../css/npc.css">
+  </HEAD>
+
+  <BODY>
+    <TABLE BORDER=1 ALIGN=CENTER><TR><TD><IMG SRC="<!--%MAPIMG%-->"></TD></TR></TABLE>
+
+    <P>
+    <DIV CLASS="NORMAL">
+      Current Random Seed: <!--%SEED%--><BR>
+    </DIV>
+    
+    <P>
+
+    <DIV CLASS="NORMAL">
+    <!--%ROOMDESC%-->
+    </DIV>
+
+    <HR SIZE=1>
+    <P>
+
+    <DIV CLASS="NORMAL">
+      <B><!--%COUNTER%--></B> hits since 10 Nov 2000!<BR>
+      <I>This site created and maintained by <A HREF="mailto:jgb3@email.byu.edu">Jamis Buck</A>
+      (jgb3@email.byu.edu)
+    </DIV>
+
+  </BODY>
+</HTML>

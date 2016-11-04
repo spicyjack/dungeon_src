@@ -1,0 +1,58 @@
+BODY, .NORMAL
+  { COLOR:           #000000;
+    BACKGROUND:      #FFFFFF;
+    FONT:            90% "Arial", sans-serif;
+    FONT-STYLE:      normal;
+    FONT-WEIGHT:     normal;
+    TEXT-DECORATION: none; }
+
+.DATA
+  { COLOR:           #000000;
+    BACKGROUND:      #FFFFFF;
+    FONT:            90% "Arial", sans-serif;
+    FONT-STYLE:      normal;
+    FONT-WEIGHT:     bold;
+    TEXT-DECORATION: none; }
+
+.HEADER
+  { COLOR:           #000000;
+    BACKGROUND:      #E0E0E0;
+    FONT:            90% "Arial", sans-serif;
+    FONT-STYLE:      normal;
+    FONT-WEIGHT:     bold;
+    TEXT-DECORATION: none; }
+
+A:link, A:visited
+  { COLOR:           #0000FF;
+    FONT-WEIGHT:     normal;
+    TEXT-DECORATION: underline; }
+
+H1
+  { COLOR:           #000000;
+    FONT-WEIGHT:     bold;
+    FONT:            200% "Arial", sans-serif; }
+
+H2
+  { COLOR:           #000000;
+    FONT-WEIGHT:     bold;
+    FONT:            165% "Arial", sans-serif; }
+
+H3
+  { COLOR:           #000000;
+    FONT-WEIGHT:     bold;
+    FONT:            110% "Arial", sans-serif; }
+
+B
+  { FONT-WEIGHT:     bold; }
+
+.DIVIDER
+  { COLOR:           #C8B078;
+    BACKGROUND:      #C8B078; }
+
+.ASIDE
+  { COLOR:           #000000;
+    BACKGROUND:      #FFE0FF;
+    FONT:            90% "Arial", sans-serif;
+    FONT-STYLE:      normal;
+    FONT-WEIGHT:     normal;
+    TEXT-DECORATION: none; }
